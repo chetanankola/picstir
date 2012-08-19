@@ -1,0 +1,81 @@
+.flickr{
+	position:absolute;
+	margin:0 auto;
+  margin-top:30px;
+	top:45%;
+	left:10px;
+}
+
+.wrap{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display:block;
+    overflow: hidden; 
+}
+
+
+.splash {
+  text-align:center;
+  font-size:1.4em;padding:20px;width:320px;
+  border: 1px solid #9c9c9c; border: 1px solid rgba(0, 0, 0, 0.3); -webkit-border-radius: .5em;-webkit-border-top-left-radius: .5em;-webkit-border-top-right-radius: .5em;-webkit-border-bottom-left-radius: .5em;-webkit-border-bottom-right-radius: .5em;
+  -moz-border-radius: .5em;border-radius: .5em;
+  background: #fefefe;background: -moz-linear-gradient(top, #fefefe, #d8d8d8);background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#d8d8d8));	
+  -moz-box-shadow: 1px 1px 3px #292929;-webkit-box-shadow: 1px 1px 3px #292929;box-shadow: 1px 1px 3px #292929;filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#656565', EndColorStr='#141414');
+}
+
+.flickfont{
+
+  margin-top:40px;
+  margin-left:10px;
+  width:320px;
+  text-align:center;
+  padding:2px;
+    font-family: 'Fredericka the Great', cursive;
+  font-size:50px;
+}
+
+#flickr-farm-container{
+  margin-top:20px;
+white-space:nowrap; 
+  bottom:0px;
+  left:0px;
+}
+
+
+#flickr-farm-container ul{
+list-style-type: none; 
+margin: 0;
+padding: 0;
+}
+
+#flickr-farm-container li {
+   display: inline-block; 
+           position:relative; 
+         height: inherit;
+}
+
+#flickr-farm-container img {
+ display: inline-block; 
+ height:130px;
+  -webkit-transition:all 0.7s;
+    box-shadow:1px 1px 9px #000;
+      margin-left:6px;
+}
+
+#flickr-farm-container ul:hover{
+}
+
+#flickr-farm-container img:hover {
+ height:200px;
+
+   -webkit-transition:all 0.7s;
+}
+
+.flickr-farm{
+  margin: 0 auto;
+  padding: 0;
+}
+
+.flickr-farm {
+
+}

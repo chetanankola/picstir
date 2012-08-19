@@ -1,0 +1,27 @@
+<div id="{{mojit_view_id}}" class="flickr">
+
+
+		<div id="flickr-farm-container">
+			<h1 style="display:none;" class="splash wrap"> 
+		    	Flickr: {{searchTerm}}
+		    </h1>
+		    <h1 class='flickfont'>FLICKR</h1>
+	    	<ul>
+	    		{{#photosArr}}
+	    		<li class='flickr-img'>
+	    			<div class="image">
+					<a href='http://farm{{farm}}.static.flickr.com/{{server}}/{{id}}_{{secret}}.jpg' target="_blank">
+						<img title='{{title}}' src='http://farm{{farm}}.static.flickr.com/{{server}}/{{id}}_{{secret}}.jpg' /> 
+					</a>
+					</div>
+	    		</li>
+	    		{{/photosArr}}
+	    	</ul>
+		</div>
+
+		<div style="bottom:1px;postion:absolute;left:1px;">
+		    		{{debug}}
+		    	    {{error}}
+		</div>
+
+</div>

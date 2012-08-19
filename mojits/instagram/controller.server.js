@@ -29,18 +29,90 @@ YUI.add('instagram', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
-            ac.models.instagramModelFoo.getData(function(err, data) {
-                if (err) {
-                    ac.error(err);
-                    return;
-                }
-                ac.assets.addCss('./index.css');
-                ac.done({
-                    status: 'Mojito is working.',
-                    data: data
+
+            ac.assets.addCss('./index.css');
+            var defaultnumofImages  = 10;
+            var searchTerm = ac.params.getFromRoute('searchTerm')||'yahoo';
+            var numofImages = ac.params.getFromRoute('numofImages')|| defaultnumofImages;
+
+            console.log('access_code_instagram');
+            var code = ac.params.getFromUrl('code');
+
+
+            var instagram_accesstoken_url = 'https://api.instagram.com/oauth/access_token';
+
+            var params = {
+                client_id:'8f3ceb4a6aba4f9c8e699586de0c62b9',
+                client_secret:'477641c717464cb88f3223a55c7c7018',
+                grant_type:'authorization_code',
+                redirect_uri:'http://fatherbanker.corp.yahoo.com:8001/',
+                code:code
+            };
+            console.log('access_token');
+            console.log(instagram_accesstoken_url);
+            var self = this;
+            if(!ac.cookie.get('access_token')){
+                Y.mojito.lib.REST.POST(instagram_accesstoken_url, params, {}, function(err,response) {
+                    if (err) {
+                        console.log(err);
+                        ac.done({error:{},login:{}});
+                    }
+                    else if(response) {
+                        var rsp_txt = response._resp.responseText;
+
+                        var access_token = Y.JSON.parse(rsp_txt).access_token;
+                        console.log(access_token);
+                        ac.cookie.set('access_token',access_token);
+                        self.getPhotos(ac,searchTerm,numofImages,access_token);
+                    } else {
+                        ac.done({error:{msg:'Instagram fail!'}});
+                    }
                 });
+
+            } else{
+
+                this.getPhotos(ac,searchTerm,numofImages,ac.cookie.get('access_token'));
+            }
+        },
+
+        getPhotos:function(ac,searchTerm,numofImages,access_token) {
+            console.log('cookieACcess_token:'+access_token);
+            var self = this;
+            ac.models.instagramModelFoo.getData(searchTerm,access_token,function(err, data) {
+                if(err){
+                    ac.done({error:err});
+                }
+                else if(data){
+                    jsonData = Y.JSON.parse(data._resp.responseText);
+                    //console.log(jsonData);
+                    var imageData = jsonData.data;
+
+
+                    imageData = self.processImages(imageData,numofImages);
+                    console.log(imageData[0]);
+
+                    ac.done({instagram:imageData});
+                } else{
+                    ac.done({});
+                }
             });
+        },
+
+        processImages: function(imgs,n){
+            var nimgs = [];
+            if(n>=imgs.length)
+                return imgs;
+
+            for(i=0;i<n;i++){
+                nimgs[i] = imgs[i];
+            }
+            return nimgs;
+
+
         }
+
+
+
 
     };
 

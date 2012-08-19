@@ -26,23 +26,14 @@
                         "type" : "main",
                         "config" : {
                             "children" : {
-                                "checkin": {
-                                    "base" : "checkin"
+                                "instagram": {
+                                    "base" : "instagram"
                                 },
-                                "login": {
-                                    "base" : "login"
+                                "flickr": {
+                                    "base": "flickr"
                                 },
-                                "weather": {
-                                    "base" : "weather"
-                                },
-                                "gmap" : {
-                                    "base" : "gmap"
-                                },
-                                "twitter" : {
-                                    "base" : "twitter"
-                                },
-                                "geocode" : {
-                                    "base" : "geocode"
+                                "search": {
+                                    "base": "search"
                                 }
                             }
                         }
@@ -57,6 +48,15 @@
                         }
                     }
                 }
+            },
+            "search": {
+                "type": "search"
+            },
+            "instagram": {
+                "type": "instagram"
+            },
+            "flickr": {
+                "type": "flickr"
             },
             "checkin": {
                 "type" : "checkin"

@@ -1,10 +1,32 @@
-<div id="{{mojit_view_id}}">
-    <dl>
-        <dt>status</dt>
-        <dd id="dd_status">{{status}}</dd>
-        <dt>data</dt>
-        <dd id="dd_data">
-            <b>some:</b> {{#data}}{{some}}{{/data}}
-        </dd>
-    </dl>
+<div id="{{mojit_view_id}}" class="instagram">
+	<h1 style="display:none;" class="splash">Instagram:{{searchTerm}}</h1>
+
+	{{#login}}
+	<a href='https://instagram.com/oauth/authorize/?client_id=8f3ceb4a6aba4f9c8e699586de0c62b9&redirect_uri=http://fatherbanker.corp.yahoo.com:8001/&response_type=code' class="splash">LOGIN INSTAGRAM </a>
+	{{/login}}
+
+
+	<div id='instagram-farm-container'>
+		<h2 class='instafont'> Instagram</h2>
+		<ul>
+	{{#instagram}}
+
+		{{#images}}
+		<li> 
+			{{#standard_resolution}}
+			<div class="image">
+			<a href='{{url}}' target="_blank">
+				<img title='{{created_time}}' src='{{url}}' /> 
+			</a>
+			</div>
+			{{/standard_resolution}}
+		</li>
+		{{/images}}
+	{{/instagram}}
+		</ul>
+	</div>
+
+	{{#error}}
+		{{msg}}
+	{{/error}}
 </div>

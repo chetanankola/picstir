@@ -1,2 +1,61 @@
-dt { font-weight: bold; }
-.sel { background-color: #FF4; }
+.instagram{
+	position:absolute;
+	margin:0 auto;
+  margin-bottom:30px;
+	top:1%;
+	left:10px;
+}
+
+
+
+.image{padding:2px;text-align:center;background: -webkit-gradient(linear, left top, left bottom, from(#FEFEFE), to(#E8E8E8));}
+
+
+
+.instafont {
+  margin-top: -60px;
+  margin-bottom: 5px;
+  margin-left:10px;
+  width:320px;
+  text-align:center;
+  padding:2px;
+    font-family: 'Fredericka the Great', cursive;
+  font-size:50px;
+}
+
+
+
+#instagram-farm-container{
+  margin-top:100px;
+  top:10px;
+  white-space:nowrap;
+  left:0px;
+}
+
+
+#instagram-farm-container ul{
+list-style-type: none; 
+margin: 0;
+padding: 0;
+}
+
+#instagram-farm-container li{
+   display: inline-block;
+        position:relative; 
+         height: inherit;
+} 
+
+#instagram-farm-container img {
+ display: inline-block; 
+ height:150px;
+  -webkit-transition:all 0.7s;
+    box-shadow:1px 1px 9px #000;
+      margin-left:6px;
+
+}
+
+
+#instagram-farm-container img:hover {
+ height:250px;
+  -webkit-transition:all 0.7s;
+}
