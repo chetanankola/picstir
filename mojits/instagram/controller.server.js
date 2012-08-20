@@ -33,7 +33,7 @@ YUI.add('instagram', function(Y, NAME) {
             ac.assets.addCss('./index.css');
 
 
-            if(!ac.params.getFromRoute('defer')){
+            if(!ac.params.getFromRoute('defer') && ac.cookie.get('access_token')){
                 var loaderImg1 = 'http://a.l.yimg.com/a/i/us/sch/mob/spinner-white-small.gif';
                 var loaderImg2 = 'http://a.l.yimg.com/a/i/us/sch/mob/spinner-1.0.0.gif';
                 return  ac.done();
@@ -125,4 +125,4 @@ YUI.add('instagram', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'instagramModelFoo']});
+}, '0.0.1', {requires: ['mojito', 'cookie','instagramModelFoo']});
