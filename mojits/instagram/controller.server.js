@@ -31,6 +31,15 @@ YUI.add('instagram', function(Y, NAME) {
         index: function(ac) {
 
             ac.assets.addCss('./index.css');
+
+
+            if(!ac.params.getFromRoute('defer')){
+                var loaderImg1 = 'http://a.l.yimg.com/a/i/us/sch/mob/spinner-white-small.gif';
+                var loaderImg2 = 'http://a.l.yimg.com/a/i/us/sch/mob/spinner-1.0.0.gif';
+                return  ac.done();
+            }
+
+
             var defaultnumofImages  = 10;
             var searchTerm = ac.params.getFromRoute('searchTerm')||'yahoo';
             var numofImages = ac.params.getFromRoute('numofImages')|| defaultnumofImages;
@@ -91,7 +100,7 @@ YUI.add('instagram', function(Y, NAME) {
                     imageData = self.processImages(imageData,numofImages);
                     console.log(imageData[0]);
 
-                    ac.done({instagram:imageData});
+                    ac.done({loggedIn:{instagram:imageData}});
                 } else{
                     ac.done({});
                 }

@@ -40,29 +40,37 @@ YUI.add('instagramBinderIndex', function(Y, NAME) {
                 //alert(search.val);
                 console.log('on SEARCH_UPDATE:Instagram'+search.val);
                 args = {params: {route: {
+                        defer:true,
                         searchTerm:search.val,
                         numofImages:(search.num || 10)}
                 }};
                 this.mojitProxy.refreshView(args);
             }, this);
 
-            var scrollview_bookmarked_friends = new Y.ScrollView({
+
+            args = {params: {route: {
+                    defer:true
+            }}};
+            this.mojitProxy.refreshView(args);
+
+            /*var scrollview_bookmarked_friends = new Y.ScrollView({
                 srcNode:this.node.one('#instagram-farm-container'),
                 deceleration: 0.9,
                 bounce:0.1,
                 flick: {
                     minDistance:10,
                     minVelocity:0.1,
-                    axis: "y"
+                    axis: "x"
                 }
             });
+            
             setTimeout(function(){
                 scrollview_bookmarked_friends.syncUI();
             },4000);
             scrollview_bookmarked_friends.render();
             Y.on('resize', function (e) {
                 scrollview_bookmarked_friends.syncUI();
-            });
+            });*/
 
         }
 

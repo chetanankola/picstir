@@ -2,10 +2,12 @@
 	<h1 style="display:none;" class="splash">Instagram:{{searchTerm}}</h1>
 
 	{{#login}}
-	<a href='https://instagram.com/oauth/authorize/?client_id=8f63cc3549334db9af117974274f2afe&redirect_uri=http://localhost:8001/&response_type=code' class="splash">LOGIN INSTAGRAM </a>
+	<a class="login-insta" href='https://instagram.com/oauth/authorize/?client_id=8f63cc3549334db9af117974274f2afe&redirect_uri=http://localhost:8001/&response_type=code' class="splash">GET INSTAGRAM PICS</a>
 	{{/login}}
 
 
+
+	{{#loggedIn}}
 	<div id='instagram-farm-container'>
 		<h2 class='instafont'> Instagram</h2>
 		<ul>
@@ -25,6 +27,7 @@
 	{{/instagram}}
 		</ul>
 	</div>
+		{{/loggedIn}}
 
 	{{#error}}
 		{{msg}}

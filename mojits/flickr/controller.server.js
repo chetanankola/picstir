@@ -29,10 +29,19 @@ YUI.add('flickr', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
+
+            ac.assets.addCss('./index.css');
+            if(!ac.params.getFromRoute('defer')){
+                var loaderImg1 = 'http://a.l.yimg.com/a/i/us/sch/mob/spinner-white-small.gif';
+                var loaderImg2 = 'http://a.l.yimg.com/a/i/us/sch/mob/spinner-1.0.0.gif';
+                return  ac.done();
+            }
+
+            
             var searchTerm = ac.params.getFromRoute('searchTerm') || 'Yahoo';
             var defaultnumofImages  = 10;
             var number = ac.params.getFromRoute('numofImages') || defaultnumofImages;
-            ac.assets.addCss('./index.css');
+
 
 
             ac.models.flickrModelFoo.getPics(searchTerm,number, function(err, rsp) {

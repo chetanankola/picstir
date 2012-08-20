@@ -41,6 +41,7 @@ YUI.add('flickrBinderIndex', function(Y, NAME) {
                 var args = {
                     params: {
                         route: {
+                            defer:true,
                             searchTerm:search.val,
                             numofImages:(search.num || 10 )
                         }
@@ -49,6 +50,13 @@ YUI.add('flickrBinderIndex', function(Y, NAME) {
                 this.mojitProxy.refreshView(args);
             }, this);
 
+
+            var args = {params: {route: {
+                    defer:true
+            }}};
+            this.mojitProxy.refreshView(args);
+
+            /*
             var scrollview_bookmarked_friends = new Y.ScrollView({
                 srcNode:this.node.one('#flickr-farm-container'),
                 deceleration: 0.9,
@@ -66,7 +74,7 @@ YUI.add('flickrBinderIndex', function(Y, NAME) {
             Y.on('resize', function (e) {
                 scrollview_bookmarked_friends.syncUI();
             });
-
+            */
 
         }
 
