@@ -52,14 +52,16 @@ padding: 0;
    display: inline-block; 
            position:relative; 
          height: inherit;
+         border-radius:14px;
 }
 
 #flickr-farm-container img {
  display: inline-block; 
- height:130px;
+ height:200px;
   -webkit-transition:all 0.7s;
     box-shadow:1px 1px 9px #000;
       margin-left:6px;
+      border-radius:14px;
 }
 
 #flickr-farm-container ul:hover{
@@ -74,8 +76,4 @@ padding: 0;
 .flickr-farm{
   margin: 0 auto;
   padding: 0;
-}
-
-.flickr-farm {
-
 }

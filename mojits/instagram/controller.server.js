@@ -42,10 +42,10 @@ YUI.add('instagram', function(Y, NAME) {
             var instagram_accesstoken_url = 'https://api.instagram.com/oauth/access_token';
 
             var params = {
-                client_id:'8f3ceb4a6aba4f9c8e699586de0c62b9',
-                client_secret:'477641c717464cb88f3223a55c7c7018',
+                client_id:'8f63cc3549334db9af117974274f2afe',
+                client_secret:'e9450c2822b2422c85381e359f70947b',
                 grant_type:'authorization_code',
-                redirect_uri:'http://fatherbanker.corp.yahoo.com:8001/',
+                redirect_uri:'http://localhost:8001/',
                 code:code
             };
             console.log('access_token');
